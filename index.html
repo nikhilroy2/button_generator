@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <main>
+
+
+        <section class="button_generator_section">
+            <div class="button_generator_wrapper">
+                <div class="sample_button_wrapper">
+                    <h2>
+                        Try one of these button
+                    </h2>
+                    <div class="button_wrapper">
+                        <span onclick="SampleBtn(this)"
+                            style="background-image: url(https://imgur.com/5BIp9d0.gif); border-radius:4px;color:#ffffff;display:inline-block;font:bold 13px/53px sans-serif;text-align:center;text-decoration:none;width:120px;">You
+                            can do it</span>
+
+                        <span onclick="SampleBtn(this)"
+                            style="background:#FAFAFB;border:1px solid #E6E6E8;border-radius:18px;color:#2f353e;display:inline-block;font:bold 13px/36px sans-serif;text-align:center;text-decoration:none;width:100px;">Click
+                            me</span>
+                        <span onclick="SampleBtn(this)"
+                            style="background:#99c739 url(https://imgur.com/clZqdfM.gif);border:1px solid #7ea613;border-radius:3px;color:#ffffff;display:inline-block;font:bold 13px/38px sans-serif;text-align:center;text-decoration:none;width:115px;">Go
+                            for it!</span>
+                    </div>
+                </div>
+                <div class="control_input_side">
+                    <div class="form_group form_group_full">
+                        <label for="">Button text</label>
+                        <input type="text" data-name="button_text" value="Show me the button!"
+                            placeholder="Show me the button!">
+                    </div>
+
+                    <div class="form_group form_group_full">
+                        <label for="bg_checkbox">
+                            <input checked="true" type="checkbox" class="checkbox_allow"
+                                onclick="checkFun(this, 'background_image')" id="bg_checkbox" name="" id="">
+                            Background image</label>
+                        <input type="text" onfocus="InputFocus(this, 'bg_checkbox')" data-name="background_image"
+                            value="https://i.imgur.com/0xPEf.gif" placeholder="https://i.imgur.com/0xPEf.gif"
+                            data-value="https://i.imgur.com/0xPEf.gif">
+                        <p>
+                            Host your own image or use a free service like <a href="https://imgur.com/"
+                                style="color: #7856ff">imgur</a> to (use
+                            “Direct Link” URL).
+                        </p>
+                    </div>
+                    <div class="form_group_row">
+                        <div class="form_group form_group_full">
+                            <label for="">Background color</label>
+                            <input type="color" onclick="clickColor(this,'background_color')"
+                                oninput="bgChange(this,this.nextElementSibling)" name="" value="#556270" id="">
+                            <input type="text" data-name="background_color" class="w_75" value="#556270">
+                        </div>
+                        <div class="form_group form_group_full">
+                            <label for="">Font color</label>
+                            <input type="color" onclick="clickColor(this,'font_color')" value="#ffffff"
+                                oninput="colorChange(this, this.nextElementSibling)" name="" id="">
+                            <input type="text" data-name="font_color" class="w_75" value="#ffffff">
+                        </div>
+                    </div>
+                    <div class="form_group_row">
+                        <div class="form_group form_group_full">
+                            <label for="">Button width</label>
+                            <input type="number" data-name="button_width" value="200">
+                            <span>px</span>
+                        </div>
+
+                        <div class="form_group form_group_full">
+                            <label for="">Button height</label>
+                            <input type="number" data-name="button_height" value="40">
+                            <span>px</span>
+                        </div>
+                    </div>
+
+                    <div class="form_group_row">
+                        <div class="form_group form_group_full">
+                            <label for="border_color"> <input onclick="checkFun(this, 'border_color')" type="checkbox"
+                                    class="checkbox_allow" checked="true" id="border_color" name="" id="">Border
+                                color</label>
+
+                            <input type="color" name="" onclick="clickColor(this,'border_color')"
+                                oninput="borderColor(this, this.nextElementSibling)" value="#1e3650" id="">
+                            <input type="text" data-name="border_color" class="w_75" value="#1e3650"
+                                data-value="#1e3650" onfocus="InputFocus(this, 'border_color')">
+                        </div>
+                        <div class="form_group form_group_full">
+                            <label for="border_radius">
+                                <input type="checkbox" onclick="checkFun(this, 'border_radius')" class="checkbox_allow"
+                                    checked="true" id="border_radius" name="" id="">Border radius</label>
+
+                            <input type="number" data-name="border_radius" value="4" data-value="4"
+                                onfocus="InputFocus(this, 'border_radius')">
+                            <span>px</span>
+                        </div>
+                    </div>
+
+                    <div class="form_group form_group_full">
+                        <label for="">Button URL</label>
+                        <input type="text" data-name="button_url" value="http://">
+                    </div>
+
+                </div>
+                <div class="control_output_side">
+                    <div class="button_output_wrapper">
+
+                    </div>
+                    <div class="output_code">
+                        <code class="selection">
+
+                        </code>
+                        <button class="btn_copy" onclick="CopyText()"> Copy</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="screenshot_generator_section">
+            <h1>
+                Screenshot Generator
+            </h1>
+            <div class="generator_wrapper">
+                <div class="wrapper_col">
+                    <form action="">
+                        <h2>
+                            Fill in your Details:
+                        </h2>
+                        <div class="form_group">
+                            <input type="text" id="inputFromName" placeholder="Your From Name">
+                        </div>
+                        <div class="form_group">
+                            <input type="text" id="inputFromEmail" placeholder="Your Confirmation Email Subject Line">
+                        </div>
+                        <div class="form_group">
+                            <input type="text" id="inputFromEmail2"
+                                placeholder="The first line of your Confirmation email">
+                        </div>
+                    </form>
+                    <i>
+                        To save the image just right click on it and select "Save Image as…"
+                    </i>
+                </div>
+                <div class="wrapper_col">
+                    <canvas id="screenshot_canvas" width="2402" height="849">
+                    </canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="price_comparison_section">
+            <div class="head">
+                <h1>
+                    Price Comparison <br>
+                    <span>
+                        DRAG THE SLIDER TO SELECT YOUR LIST SIZE
+                    </span>
+
+                </h1>
+                <div class="body">
+                    <div class="range_wrapper">
+                        <label>
+                            <input oninput="rangeInput(this)" type="range" id="range" class="range" min="500" max="30000" step="500" value="0">
+                        </label>
+                        <span class="subscribers" data-range="subscribers">
+                            500 subscribers
+                        </span>
+                    </div>
+                    <div class="price_company_table">
+                        <table>
+                            <tbody><tr id="price_1nd_tr">
+                                <th width="16%"></th>
+                                <th width="12%" class="mailchimp"></th>
+                                <th width="12%" class="aweber">Aweber</th>
+                                <th width="12%" class="convertkit">Convertkit</th>
+                                <th width="12%" class="drip">Drip</th>
+                                <th width="12%" class="getresponse">GetResponse</th>
+                                <th width="12%" class="campaignmonitor">CampaignMonitor</th>
+                                <th width="12%" class="infusionsoft">Infusionsoft</th>
+                            </tr>
+                            <tr id="price_2nd_tr">
+                                <td>Per month</td>
+                                <td class="middle_td">$ <span class="mailchimp-price">0</span></td>
+                                <td>$ <span class="aweber-price">19</span></td>
+                                <td>$ <span class="convertkit-price">29</span></td>
+                                <td>$ <span class="drip-price">49</span></td>
+                                <td>$ <span class="getresponse-price">15</span></td>
+                                <td>$ <span class="campaignmonitor-price">9</span></td>
+                                <td>$ <span class="infusionsoft-price">199</span></td>
+                            </tr>
+                            <tr id="price_3nd_tr">
+                                <td>Per subscriber</td>
+                                <td class="bottom_td">$ <span class="mailchimp-price-per-subscriber">0</span></td>
+                                <td>$ <span class="aweber-price-per-subscriber">0.038</span></td>
+                                <td>$ <span class="convertkit-price-per-subscriber">0.058</span></td>
+                                <td>$ <span class="drip-price-per-subscriber">0.098</span></td>
+                                <td>$ <span class="getresponse-price-per-subscriber">0.03</span></td>
+                                <td>$ <span class="campaignmonitor-price-per-subscriber">0.018</span></td>
+                                <td>$ <span class="infusionsoft-price-per-subscriber">0.398</span></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="hidden_section">
+            <div class="head">
+                <a href="#content_body_show" onclick="showContentBody()">
+
+                    Got questions about this tool?
+                    <span>
+                        Read our basic troubleshooting and FAQ
+                    </span>
+                </a>
+            </div>
+            <div class="content_body" data-toggling="content_body">
+                <div class="content_col" id="content_body_show">
+                    <h1>
+                        Basic troubleshooting steps
+                    </h1>
+                    <ol class="content_list">
+                        <li>
+                            Check that the code you're sending is exactly what was generated above. If you've made
+                            manual code changes, and things work as expected when you test the original version,
+                            something may have gone wrong while tweaking the code.
+                        </li>
+                        <li>
+                            See if the problem is happening in more than one email client. If it's specific to one email
+                            host, <a href="#">inspect the received email HTML</a> to see if a mail server may have
+                            altered your code before it reached the email client.
+
+
+                        </li>
+                        <li>
+                            If you've sent the email with a different service than Campaign Monitor, try sending
+                            previews to a few different email hosts (e.g. <a href="#">Gmail</a> or <a href="#">Yahoo!
+                                Mail</a> ) and <a href="#">inspect the received email HTML.</a> If you're seeing changes
+                            to your code with every address you send to, it's likely that the service you're using to
+                            send emails is making unwanted changes to your HTML.
+                        </li>
+                    </ol>
+
+                    <h3>
+                        If you're still having trouble, feel free to email support@campaignmonitor.com your full
+                        template/campaign files, as well as <a href="#">a screenshot</a> showing the issue clearly in
+                        the relevant email client(s).
+                    </h3>
+                    <div class="content_desk">
+                        <h1>
+                            Common questions and known issues
+                        </h1>
+                        <div class="desk_col">
+                            <h2>
+                                Can I use bulletproof buttons on top of bulletproof background images?
+                            </h2>
+                            <h3>
+                                Unfortunately, these buttons can not be placed on top of background images, because
+                                Outlook doesn't support nested VML elements. In many cases though, you may be able to
+                                code the design up successfully by changing the structure.
+                            </h3>
+                            <h3>
+                                For instance, if only part of the image needs to be behind text content, you can
+                                sometimes slice the image, use a bulletproof background image for only that part of the
+                                design, and use bulletproof buttons or inline images (<a href="#">held together by a
+                                    table structure</a>) for other parts.
+                            </h3>
+                        </div>
+
+                        <div class="desk_col">
+                            <h2>
+                                How can I make my bulletproof buttons responsive?
+                            </h2>
+                            <h3>
+                                Because <a href="#">Outlook doesn't support @media queries</a>, you only need to worry
+                                about <a href="#">the email clients that do</a>. So only the HTML element needs to be
+                                responsive, not the VML. As a general recommendation, using mostly pixel based widths in
+                                the HTML is more reliable, and you can then override this with other pixel or percentage
+                                based widths for other viewports like with any responsive web design.
+
+                            </h3>
+                            <h3>
+                                To get started, give your button link a class or ID that you can target. Then <a
+                                    href="#">in any appropriate @media queries</a>, give the link(s) different
+                                dimensions, background images, etc.
+
+                            </h3>
+                        </div>
+
+                        <div class="desk_col">
+                            <h2>
+                                Can I stop background images from repeating?
+                            </h2>
+                            <h3>
+                                This technique can only create buttons with repeating background images. To stop it from
+                                repeating visibly in one or both directions, you’ll want to make sure the background
+                                image is at least the size of the button, with any extra spacing added around the
+                                background image file itself if necessary. Also make sure the button is more than wide
+                                enought to fit the label, so it doesn’t accidentally break across two lines if the font
+                                changes slightly.
+
+
+                            </h3>
+                        </div>
+
+                        <div class="desk_col">
+                            <h2>
+                                Why is my background image scaled up or down in Outlook?
+                            </h2>
+                            <h3>
+                                Unlike most other email clients and browsers, Outlook 2007/2010/2013 uses the DPI of
+                                your background image to determine the scale. So to make sure it renders at the right
+                                size, <a href="#">set the image's resolution</a> to 96 DPI.
+                            </h3>
+                        </div>
+
+
+                        <div class="desk_col">
+                            <h2>
+                                Can I make buttons editable with Campaign Monitor template tags?
+                            </h2>
+                            <h3>
+                                Unfortunately, the button URL, text, and other attributes can not be made editable in
+                                our editor.
+                            </h3>
+                            <h3>
+                                If you’d like to see this feature added to the editor, make your voice heard <a
+                                    href="#">in our forums</a> or <a href="#">by email</a>.
+                            </h3>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="content_col">
+                    <div class="content_row">
+                        <h3>
+                            Compatibility
+                        </h3>
+                        <ul class="content_list">
+                            <li>Android Mail</li>
+                            <li>AOL Web</li>
+                            <li>Apple Mail</li>
+                            <li>Gmail</li>
+                            <li>iPad/iPhone Mail</li>
+                            <li>Lotus Notes 8<sup>2</sup></li>
+                            <li>Outlook.com<sup>1</sup></li>
+                            <li>Outlook 2000/03<sup>2</sup></li>
+                            <li>Outlook 2007/10/13</li>
+                            <li>Outlook XP<sup>2</sup></li>
+                            <li>Thunderbird</li>
+                            <li>Yahoo! Mail<sup>2</sup></li>
+                            <br>
+                            <br>
+                            <br>
+                            <li><i>1. Ignores background image</i></li>
+                            <li><i>2. Ignores rounded corners
+                                    n.b. Rounded corners in webmail clients require that the browser supports
+                                    border-radius. Background images may get blocked in some email clients.</i></li>
+                        </ul>
+
+                        <div class="content_2nd">
+                            <h3>
+                                Get in touch with us
+                            </h3>
+                            <span class="size_smallX" style="color: #5d5d66">
+                                Found a bug? Made an improvement? Or do you simply need a hand with something? If so, <a
+                                    href="#">get in touch with us.</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
